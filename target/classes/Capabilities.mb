@@ -1,0 +1,28 @@
+package test.script;
+import org.openqa.selenium.remote.DesiredCapabilities;
+public class Capabilities {
+
+	public static DesiredCapabilities getCapabilities(){
+		DesiredCapabilities cp=new DesiredCapabilities();
+
+		cp.setCapability("platformName", "android");
+		cp.setCapability("deviceName", "testDevice");
+		cp.setCapability("platformVersion", "4.4");
+
+		cp.setCapability("appPackage", "#packageName#");
+		cp.setCapability("appActivity","#startActivity#");
+
+		cp.setCapability("unicodeKeyboard", "True"); //
+		// Chinese
+		cp.setCapability("resetKeyboard", "True");
+		cp.setCapability("newCommandTimeout", "240");
+		//cp.setCapability("noReset","false" );
+		return cp;
+		
+	}
+	
+	public static String getUrl(){
+		String url="http://#ip#:#port#/wd/hub";
+		return url;
+	}
+}

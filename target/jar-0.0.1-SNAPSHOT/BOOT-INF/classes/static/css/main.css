@@ -1,0 +1,19 @@
+.deviceShow{
+
+
+
+}
+
+.devicelabel{
+border:2px solid gray;
+border-radius:2px;
+	
+}
+.pass{
+color:green;
+
+}
+.fail{
+color:red;
+
+}

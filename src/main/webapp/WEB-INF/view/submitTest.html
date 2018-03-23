@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+   <head>
+      <title>upload</title>
+      <meta charset="utf-8">
+
+      <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <scr f]-->
+	  <script type="text/javascript" src="./js/jquery.js"></script>
+	  <script>
+
+	    function submit(){
+	    	
+	    	alert("submit");
+	    	  $.ajax(
+					  { 
+					  url:'/auto-web/submit',
+					  type:'get',
+					  contentType:'application/json;charset=UTF-8',
+					  data:{
+							 
+						  'taskName':'测试UUI',
+						  'userName':'black',
+						  'deviceSerial':';216a84c4',
+						  'scriptName':';test1.java;test2.java',
+						  'apkName':'test.apk',
+						  'method':'appium',
+			
+								
+						  
+					  },
+	
+					  success:function(data,status){
+						  alert(data);
+
+
+					  },
+					  error:function (data, status, e){
+				              alert(e);
+				          }
+						  
+					  });
+       }
+	
+	  </script>
+
+   </head>
+   <body>
+   
+   <input type="button" onclick="submit()" value="测试请求"></input>
+
+   </body>
+
+
+</html>

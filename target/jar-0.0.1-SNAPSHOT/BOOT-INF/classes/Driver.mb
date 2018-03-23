@@ -1,0 +1,51 @@
+package test.script;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
+public class Driver {
+
+	private static DesiredCapabilities getCapabilities(){
+		DesiredCapabilities cp=new DesiredCapabilities();
+
+		cp.setCapability("platformName", "android");
+		cp.setCapability("deviceName", "testDevice");
+		cp.setCapability("platformVersion", "4.4");
+
+		cp.setCapability("app","#apkPath#");
+
+		cp.setCapability("appPackage", "#packageName#");
+		cp.setCapability("appActivity","#startActivity#");
+
+		cp.setCapability("unicodeKeyboard", "True"); //
+		// Chinese
+		cp.setCapability("resetKeyboard", "True");
+		cp.setCapability("newCommandTimeout", "240");
+		//cp.setCapability("noReset","false" );
+		return cp;
+		
+	}
+	
+	public static AppiumDriver<WebElement> getDriver(){
+		AppiumDriver<WebElement> driver=null;
+		DesiredCapabilities capabilities=getCapabilities();
+		try {
+			driver=new AndroidDriver<WebElement>(new URL(getUrl()), capabilities);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			if(null==driver)driver=getDriver();
+			
+		} 
+		
+		return driver;
+	}
+	
+	private static String getUrl(){
+		String url="http://#ip#:#port#/wd/hub";
+		return url;
+	}
+}

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+   <head>
+      <title>upload</title>
+      <meta charset="utf-8">
+      <!-- 引入 Bootstrap -->
+      <link href="component/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="component/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet">
+	  <link href="assert/upload.css" rel="stylesheet">
+      <script src="js/jquery.js"></script>
+      <script src="component/bootstrap/js/bootstrap.min.js"></script>
+	  <script src="component/bootstrap-fileinput/js/locales/zh.js"></script>
+      <script src="component/bootstrap-fileinput/js/fileinput.min.js"></script>
+      <script src="js/upload.js"></script>
+ 
+      <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <scr f]-->
+	  
+	  <script>
+
+
+	
+	  </script>
+
+   </head>
+   <body>
+
+   <div class="row">
+
+     <span class="col-sm-offset-8 col-sm-2 text-muted">time</span>
+     
+	 <span class="col-sm-2 text-muted">welcome <em>{user.name}</em></span>
+   
+   </div>
+
+
+     <form enctype="multipart/form-data" class="col-sm-offset-3 col-sm-6" style="margin-top:10%;">
+       <input id="uploadfile" class="file" type="file" data-show-preview="false">
+       <span class="help-block">请将需要测试的apk和脚本压缩成zip格式后上传，脚本扩展名为.java </span>
+
+	   <input type="submit" class="btn btn-primary" value="提交任务"></input>
+	 </form>
+   </body>
+
+
+</html>
